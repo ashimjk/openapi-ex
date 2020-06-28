@@ -1,0 +1,36 @@
+openapi: 3.0.1
+info:
+  title: Swagger Petstore
+  version: 1.0.0
+tags:
+  - name: pet
+    description: Everything about your Pets
+paths:
+  '/pet/{petId}/{petId2}':
+    get:
+      tags:
+        - pet
+      summary: Find pet by ID
+      description: Returns a single pet
+      operationId: getPetById
+      parameters:
+        - name: petId
+          in: path
+          description: ID of pet to return
+          required: true
+          schema:
+            type: integer
+            format: int64
+            example: 12
+        - name: petId2
+          in: path
+          description: petId2
+          required: true
+          schema:
+            type: string
+            example: ashim
+      responses:
+        '200':
+          description: successful operation
+          content: {}
+
